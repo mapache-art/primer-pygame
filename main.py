@@ -18,6 +18,13 @@ reloj = pygame.time.Clock()
 corriendo = True
 jugador_x = 100
 jugador_y = 100
+# Cargar la imagen desde el archivo
+imagen_jugador = pygame.image.load("jugador.png")
+enemigo_x = 600
+enemigo_y = 400
+imagen_enemigo = pygame.image.load("enemigo.png")
+# Opcional: Si es muy grande/pequeña, se puede cambiar el tamaño.
+# imagen_jugador = pygame.transform.scale(imagen_jugador, (50, 50)) 
 # 3. Bucle del Juego (Game Loop)
 while corriendo:
     # --- Manejo de Eventos ---
@@ -38,10 +45,13 @@ while corriendo:
         jugador_y -= 5
     if teclas[pygame.K_DOWN]:
         jugador_y += 5
+
+    
     # --- Dibujado ---
     # Limpiamos la pantalla (pintamos de negro, por defecto es negro pero es bueno ser explícito)
-    #pantalla.fill((0, 0, 0))  # RGB: (0, 0, 0) es Negro
-    pygame.draw.rect(pantalla, (255, 0, 0), (jugador_x, jugador_y, 50, 50))
+    pantalla.fill((0, 0, 0))  # RGB: (0, 0, 0) es Negro
+    pantalla.blit(imagen_jugador, (jugador_x, jugador_y))
+    pantalla.blit(imagen_enemigo, (enemigo_x, enemigo_y))
     # Actualizamos la pantalla para mostrar lo que hemos dibujado
     pygame.display.flip()
 
