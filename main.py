@@ -14,11 +14,12 @@ except ImportError:
 pygame.init()
 
 # 2. Configuración de la Pantalla
+
 ANCHO = 800
 ALTO = 600
 # Creamos la ventana (Superficie principal)
 pantalla = pygame.display.set_mode((ANCHO, ALTO))
-pygame.display.set_caption("Mi Primer Juego")
+pygame.display.set_caption("")
 
 # Reloj para controlar la velocidad del juego (FPS)
 reloj = pygame.time.Clock()
