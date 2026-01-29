@@ -1,4 +1,13 @@
-import pygame
+import sys
+import subprocess
+
+try:
+    import pygame
+except ImportError:
+    print("¡Pygame no está instalado! Instalando automáticamente... 🔧")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "pygame"])
+    import pygame
+    print("¡Instalación completada! Arrancando el juego... 🚀")
 
 # 1. Inicializar Pygame
 # Siempre es el primer paso. Prepara los módulos internos.
