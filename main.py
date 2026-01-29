@@ -14,18 +14,18 @@ except ImportError:
 pygame.init()
 
 # 2. Configuración de la Pantalla
-
-ANCHO = 800
-ALTO = 600
+NOMBRE_DEL_JUEGO = "Mi Primer Juego" #Variable de texto✅
+ANCHO = 800 #Variable de número✅
+ALTO = 600 #Variable de número✅
 # Creamos la ventana (Superficie principal)
 pantalla = pygame.display.set_mode((ANCHO, ALTO))
-pygame.display.set_caption("")
+pygame.display.set_caption(NOMBRE_DEL_JUEGO)
 
 # Reloj para controlar la velocidad del juego (FPS)
 reloj = pygame.time.Clock()
 
 # Variable para controlar el bucle principal
-corriendo = True
+corriendo = True # Variable booleana✅
 jugador_x = 100
 jugador_y = 100
 # Cargar la imagen desde el archivo
@@ -36,10 +36,10 @@ imagen_enemigo = pygame.image.load("enemigo.png")
 # Opcional: Si es muy grande/pequeña, se puede cambiar el tamaño.
 # imagen_jugador = pygame.transform.scale(imagen_jugador, (50, 50)) 
 # 3. Bucle del Juego (Game Loop)
-while corriendo:
+while corriendo: # Bucle principal✅
     # --- Manejo de Eventos ---
     # Revisamos todo lo que ha pasado (teclas, ratón, cerrar ventana)
-    for evento in pygame.event.get():
+    for evento in pygame.event.get(): #Sentencia condicional✅
         if evento.type == pygame.QUIT:
             # Si el usuario pulsa la X de la ventana
             corriendo = False
@@ -47,14 +47,14 @@ while corriendo:
     # --- Lógica del Juego ---
     # Aquí calcularemos movimientos, choques, etc.
     teclas = pygame.key.get_pressed()
-    if teclas[pygame.K_LEFT]:
-        jugador_x -= 5
+    if teclas[pygame.K_LEFT]: #Sentencia condicional✅
+        jugador_x -= 5 #Operación: Resta✅
     if teclas[pygame.K_RIGHT]:
-        jugador_x += 5
+        jugador_x += 5 #Operación: Suma✅
     if teclas[pygame.K_UP]:
-        jugador_y -= 5
+        jugador_y -= 5 #Operación: Resta✅
     if teclas[pygame.K_DOWN]:
-        jugador_y += 5
+        jugador_y += 5 #Operación: Suma✅
 
     
     # --- Dibujado ---
